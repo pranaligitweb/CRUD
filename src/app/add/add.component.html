@@ -1,0 +1,33 @@
+<div  class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>User information</h2>
+            <hr>
+        </div>
+        <div class="col-lg-12">
+            <form [formGroup]="formdata" (ngSubmit)="submit(formdata.value)">
+                <div class="col-lg-12">
+                    Name: <span *ngIf="formdata.controls.name.touched && formdata.controls.name.invalid" class="text-danger small">Please Enter Name</span>
+                    <input type="text" class="form-control" formControlName="name">
+
+                </div><br>
+                <div class="col-lg-12">
+                    Email: <span *ngIf="formdata.controls.email.touched && formdata.controls.email.invalid" class="text-danger small">Please Enter Email</span>
+                    <input type="text" class="form-control" formControlName="email">
+
+                </div><br>
+                <div class="col-lg-12">
+                    Mobileno: <span *ngIf="formdata.controls.mobileno.touched && formdata.controls.mobileno.invalid" class="text-danger small">Please Enter Mobileno</span>
+                    <input type="text" class="form-control" formControlName="mobileno">
+
+                </div><br>
+                <div class="col-lg-12">
+                    <input type="submit" value="save" class="btn btn-success" [disabled]="!formdata.valid">
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
